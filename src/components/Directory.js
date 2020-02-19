@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import contactsData from '../contactsData';
-import ContactCard from './ContactCard';
-import AddContact from './AddContact';
-import RemoveContact from './RemoveContact';
+// import contactsData from '../contactsData';
+import ContactCard from '../components/ContactCard';
+// import AddContact from '../components/AddContact';
+// import RemoveContact from '../components/RemoveContact';
+import FormContainer from './FormContainer'
 
 
 class Directory extends Component {    
@@ -12,23 +13,23 @@ constructor() {
         contacts: []            
     };
     //bindear el contexto para acceder a this
-    this.addContact = this.addContact.bind(this);
-    this.removeContact = this.removeContact.bind(this);
+    // this.addContact = this.addContact.bind(this);
+    // this.removeContact = this.removeContact.bind(this);
 }
 
-addContact = () => {
-    this.setState({
-        contacts: contactsData
-    }    
-    );
-}
+// addContact = () => {
+//     this.setState({
+//         contacts: contactsData
+//     }    
+//     );
+// }
 
-removeContact = () => {
-    this.setState({
-        contacts: []
-    }    
-    );
-}
+// removeContact = () => {
+//     this.setState({
+//         contacts: []
+//     }    
+//     );
+// }
 
 
 
@@ -38,10 +39,12 @@ render() {
     <ContactCard info={contacto} key={idx} /> );
 
     return(
-        <>
+        <>    
         <div className="container">                            
-                    <span className="mr-2"><AddContact add={this.addContact}/></span>
-                    <RemoveContact remove={this.removeContact}/>                                             
+                    {/* <span className="mr-2"><AddContact add={this.addContact}/></span> */}
+                    {/* <RemoveContact remove={this.removeContact}/> */}
+                    <FormContainer />
+                                                                 
                 {contact}
         </div>
 
