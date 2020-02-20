@@ -8,6 +8,7 @@ const ContactCard = (props) => {
                     <p className="card-text">{props.info.name}</p>
                     <p className="card-text">{props.info.phone}</p>
                     <p className="card-text">{props.info.email}</p>
+                    <p className="card-text">{props.info.website}</p>
                 </div>
             </div>        
     );

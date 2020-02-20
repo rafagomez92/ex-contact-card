@@ -10,12 +10,13 @@ class FormContainer extends Component {
         newContact: {
             name:'',
             phone:'',
-            email:''
+            email:'',
+            website:''
         },
         contactsSaved: []        
     }
 
-    // Metodo generico
+    // Metodo generico para los inputs
 
     handleInput = (e) => {
         let value = e.target.value;
@@ -30,44 +31,6 @@ class FormContainer extends Component {
         )
     }
 
-
-    // handleName = (e) => {
-    //     let value = e.target.value;  //e.target es cuando se clickea el elemento
-
-    //     this.setState(
-    //         prevState => ({
-    //             newContact: {
-    //                 ...prevState.newContact, // con este nos sirve para guardar los valores anteriores para no perder los demas datos
-    //                 name: value //y solo actualizamos el name
-    //             }
-    //         })
-    //     );
-    // }
-    // handlePhone = (e) => {
-    //     let value = e.target.value;
-
-    //     this.setState(
-    //         prevState => ({
-    //             newContact: {
-    //                 ...prevState.newContact, 
-    //                 phone: value 
-    //             }
-    //         })
-    //     );
-    // }
-    // handleEmail = (e) => {
-    //     let value = e.target.value;
-
-    //     this.setState(
-    //         prevState => ({
-    //             newContact: {
-    //                 ...prevState.newContact, 
-    //                 email: value 
-    //             }
-    //         })
-    //     );
-    // }
-
     handleFormSubmit = (e) => {
         e.preventDefault();
         let userData = this.state.newContact;
@@ -80,7 +43,8 @@ class FormContainer extends Component {
                 newContact: {
                     name:'',
                     phone:'',
-                    email:''
+                    email:'',
+                    website:''
                 }
             }
         ));
@@ -92,7 +56,8 @@ class FormContainer extends Component {
             {newContact: {
                 name:'',
                 phone:'',
-                email:''
+                email:'',
+                website:''
             }}
         );
     }
@@ -108,20 +73,6 @@ class FormContainer extends Component {
                 });
             });
     }        
-
-
-    // componentDidMount() {        
-    //  De esta manera podemos extraer datos de una url y convertirlo a un json
-    //     const url = 'https://jsonplaceholder.typicode.com/users';
-    //     fetch(url)
-    //         .then(response => response.json())
-    //         .then(data => {                
-    //             this.setState({
-    //                 contactsSaved: data
-    //             });
-    //         });
-    // }
-
 
     render() {
         
@@ -155,6 +106,13 @@ class FormContainer extends Component {
                     type="text"
                     value={this.state.newContact.email}
                     placeholder="Correo electrónico"
+                    handleChange={this.handleInput}
+                    />
+                    <Input
+                    name="website"
+                    type="text"
+                    value={this.state.newContact.website}
+                    placeholder="Página web"
                     handleChange={this.handleInput}
                     />
                     <Button
